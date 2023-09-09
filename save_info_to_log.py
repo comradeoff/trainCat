@@ -1,4 +1,4 @@
-def save_info_to_log (data, filename="log"):
+def save_info_to_log (data, filename="log.txt"):
     """
     Данная функция  позволяет сохранить данные о грузе и платформе в отдельный файл.
     

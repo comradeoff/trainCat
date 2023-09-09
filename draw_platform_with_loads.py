@@ -35,6 +35,7 @@ def draw_platform_with_loads_2d(
 
     # Списки для хранения информации о загрузке для отображения под диаграммой
     load_info = []
+    load_info.append(f"Платформа: длина={platform_length}, ширина={platform_width}.")
 
     for i, (load_length, load_width, load_height, load_weight) in enumerate(loads):
         if current_x + load_length > platform_length:
@@ -75,7 +76,7 @@ def draw_platform_with_loads_2d(
 
         # Сохранение информацию о грузе для отображения под диаграммой
         load_info.append(
-            f"Груз {load_number}: Длина={load_length}, Ширина={load_width}, Высота={load_height}, Вес={load_weight},Поперечный Ц.Т.: {transverse_coms[i]:.2f}, Продольный Ц.Т.: {longitudinal_coms[i]:.2f}"
+            f"Груз {load_number}: Длина={load_length}, Ширина={load_width}, Высота={load_height}, Вес={load_weight},Поперечный Ц.М.={transverse_coms[i]:.2f}, Продольный Ц.М.={longitudinal_coms[i]:.2f}"
         )
 
         # Обновление номера груза и текущего положения для следующего груза
@@ -83,14 +84,14 @@ def draw_platform_with_loads_2d(
         current_x += load_length + load_distance
 
     # Отображение информации о грузе под диаграммой
-    load_info_str = "\n".join(load_info)
-    plt.text(
-        platform_length * 0.1,
-        -platform_width * 0.15,
-        load_info_str,
-        fontsize=8,
-        color="black",
-    )
+    # load_info_str = "\n".join(load_info)
+    # plt.text(
+    #     platform_length * 0.1,
+    #     -platform_width * 0.15,
+    #     load_info_str,
+    #     fontsize=8,
+    #     color="black",
+    # )
 
     ax.set_xlim(-0.1 * platform_length, 1.1 * platform_length)
     ax.set_ylim(-0.1 * platform_width, 1.3 * platform_width)
