@@ -6,7 +6,6 @@ from draw_platform_with_loads import *
 load1 = Load(3650, 3320, 1500, 6670)
 load2 = Load(3870, 2890, 1020, 4085)
 load3 = Load(1080, 1580, 390, 395)
-load4 = Load(3650, 3320, 1500, 6670)
 
 loads = [
     (load1.length, load1.width, load1.height, load1.weight),
