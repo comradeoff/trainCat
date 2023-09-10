@@ -45,7 +45,7 @@ def longitudinal_centers_of_mass(objects):
 
     for obj in objects:
         length, width, height, weight = obj
-        longitudinal_com = (length * weight) / (2 * (length + width + height))
+        longitudinal_com = (width  * weight) / (2 * (length + width + height))
         centers_of_mass.append(longitudinal_com)
 
     return tuple(centers_of_mass)
