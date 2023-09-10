@@ -105,4 +105,4 @@ def draw_platform_with_loads_2d(
     # plt.savefig(output_filename, bbox_inches="tight")
     plt.show() 
     
-    save_info_to_log(load_info)
+    save_info_to_log(load_info) 
