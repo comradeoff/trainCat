@@ -3,15 +3,34 @@ from platformU import *
 from calc_mass_center import *
 from draw_platform_with_loads import *
 
-load1 = Load(3650, 3320, 1500, 6670)
-load2 = Load(3870, 2890, 1020, 4085)
-load3 = Load(1080, 1580, 390, 395)
+loads = []
 
-loads = [
+length1 = int(input("Введите длину груза: "))
+width1 = int(input("Введите ширину груза: "))
+height1 = int(input("Введите высоту груза: "))
+weight1 = int(input("Введите вес груза: "))
+
+load1 = Load(length1, width1, height1, weight1)
+
+answ = input("Хотите ли вы добавить ещё один груз?(y/n): ")
+if answ == "y":
+    length2 = int(input("Введите длину второго груза: "))
+    width2 = int(input("Введите ширину второго груза: "))
+    height2 = int(input("Введите высоту второго груза: "))
+    weight2 = int(input("Введите вес второго груза: "))
+    
+    load2 = Load(length2, width2, height2, weight2)
+    
+    loads = [
     (load1.length, load1.width, load1.height, load1.weight),
     (load2.length, load2.width, load2.height, load2.weight),
-    (load3.length, load3.width, load3.height, load3.weight),
-]
+    ]
+else:
+    loads = [
+    (load1.length, load1.width, load1.height, load1.weight),
+    ]
+
+
 
 tcom = (transverse_centers_of_mass(loads))
 lcom = (longitudinal_centers_of_mass(loads))
